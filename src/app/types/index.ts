@@ -5,7 +5,7 @@ export type StepperProps = {
   isLastStep: (value: boolean) => void;
   isFirstStep: (value: boolean) => void;
   label?: string;
-  children: JSX.Element[];
+  children: React.ReactElement<StepProps>[];
 };
 
 export type StepProps = {
