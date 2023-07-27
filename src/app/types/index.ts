@@ -1,4 +1,4 @@
-export type Stepper = {
+export type StepperProps = {
   className?: string;
   style?: object;
   activeStep: number;
@@ -8,7 +8,7 @@ export type Stepper = {
   children: JSX.Element[];
 };
 
-export type Step = {
+export type StepProps = {
   index?: number;
   activeStep?: number;
   isLastStep?: boolean;
@@ -16,4 +16,4 @@ export type Step = {
   children?: JSX.Element[];
 };
 
-export type GetClassName = (stepIndex: number, activeStepIndex: number) => string;
+export type GetClassNameProps = (stepIndex: number, activeStepIndex: number) => string;

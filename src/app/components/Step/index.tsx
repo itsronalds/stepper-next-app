@@ -1,6 +1,6 @@
-import { Step, GetClassName } from '../../types';
+import { StepProps, GetClassNameProps } from '../../types';
 
-const Step = ({ index, activeStep, isLastStep, onClick, children }: Step) => {
+const Step = ({ index, activeStep, isLastStep, onClick, children }: StepProps) => {
   if (index === undefined || typeof index !== 'number') {
     throw new Error('The "index" value is required and must be a numeric value.');
   }
@@ -13,7 +13,7 @@ const Step = ({ index, activeStep, isLastStep, onClick, children }: Step) => {
     throw new Error('The "isLastStep" value is required and must be a boolean value.');
   }
 
-  const getStepClassName: GetClassName = (stepIndex, activeStepIndex) => {
+  const getStepClassName: GetClassNameProps = (stepIndex, activeStepIndex) => {
     let className = 'flex justify-center items-center w-10 h-10 rounded-full cursor-pointer ';
 
     if (stepIndex < activeStepIndex) {
@@ -31,7 +31,7 @@ const Step = ({ index, activeStep, isLastStep, onClick, children }: Step) => {
     return className;
   };
 
-  const getStepTextClassName: GetClassName = (stepIndex, activeStepIndex) => {
+  const getStepTextClassName: GetClassNameProps = (stepIndex, activeStepIndex) => {
     let className = 'text-sm mt-2 transition-all ';
 
     if (stepIndex < activeStepIndex) {
@@ -49,7 +49,7 @@ const Step = ({ index, activeStep, isLastStep, onClick, children }: Step) => {
     return className;
   };
 
-  const getStepLineClassName: GetClassName = (stepIndex, activeStepIndex) => {
+  const getStepLineClassName: GetClassNameProps = (stepIndex, activeStepIndex) => {
     let className = 'absolute top-5 -right-1/2 w-full h-0.5 pointer-none transition-all ';
 
     if (stepIndex < activeStepIndex) {

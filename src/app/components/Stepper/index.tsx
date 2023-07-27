@@ -1,7 +1,7 @@
 import { useEffect, Children, cloneElement, isValidElement } from 'react';
-import { Stepper } from '../../types';
+import { StepperProps } from '../../types';
 
-const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label, children }: Stepper) => {
+const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label, children }: StepperProps) => {
   /**
    * Stepper style & className default value
    */
