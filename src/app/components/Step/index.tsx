@@ -1,6 +1,18 @@
-import { StepProps, GetClassName } from '../../types';
+import { Step, GetClassName } from '../../types';
 
-const Step = ({ index, activeStep, isLastStep, onClick, children }: StepProps) => {
+const Step = ({ index, activeStep, isLastStep, onClick, children }: Step) => {
+  if (index === undefined || typeof index !== 'number') {
+    throw new Error('The "index" value is required and must be a numeric value.');
+  }
+
+  if (activeStep === undefined || typeof activeStep !== 'number') {
+    throw new Error('The "activeStep" value is required and must be a numeric value.');
+  }
+
+  if (isLastStep === undefined || typeof isLastStep !== 'boolean') {
+    throw new Error('The "isLastStep" value is required and must be a boolean value.');
+  }
+
   const getStepClassName: GetClassName = (stepIndex, activeStepIndex) => {
     let className = 'flex justify-center items-center w-10 h-10 rounded-full cursor-pointer ';
 
