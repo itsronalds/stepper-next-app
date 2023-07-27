@@ -45,35 +45,35 @@ export default function Home() {
           isFirstStep={(value) => setIsFirstStep(value)}
           label="My Tracking System"
         >
-          <Step onClick={() => setActiveStep(0)} index={0} activeStep={0} isLastStep={false}>
+          <Step onClick={() => setActiveStep(0)}>
             <FontAwesomeIcon icon={faUserPlus} />
             <div>
               <p>Step 1</p>
               <p>Registration</p>
             </div>
           </Step>
-          <Step onClick={() => setActiveStep(1)} index={0} activeStep={0} isLastStep={false}>
+          <Step onClick={() => setActiveStep(1)}>
             <FontAwesomeIcon icon={faCircleCheck} className="w-5 h-5" />
             <div>
               <p>Step 2</p>
               <p>Verification</p>
             </div>
           </Step>
-          <Step onClick={() => setActiveStep(2)} index={0} activeStep={0} isLastStep={false}>
+          <Step onClick={() => setActiveStep(2)}>
             <FontAwesomeIcon icon={faUserCheck} />
             <div>
               <p>Step 3</p>
               <p>Login</p>
             </div>
           </Step>
-          <Step onClick={() => setActiveStep(3)} index={0} activeStep={0} isLastStep={false}>
+          <Step onClick={() => setActiveStep(3)}>
             <FontAwesomeIcon icon={faGear} className="w-5 h-5" />
             <div>
               <p>Step 4</p>
               <p>Setting</p>
             </div>
           </Step>
-          <Step onClick={() => setActiveStep(4)} index={0} activeStep={0} isLastStep={false}>
+          <Step onClick={() => setActiveStep(4)}>
             <FontAwesomeIcon icon={faFaceLaughWink} />
             <div>
               <p>Step 5</p>
