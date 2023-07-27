@@ -1,7 +1,7 @@
 import { useEffect, Children, cloneElement, isValidElement } from 'react';
-import { StepperProps, StepProps } from '../../types';
+import { Stepper } from '../../types';
 
-const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label, children }: StepperProps) => {
+const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label, children }: Stepper) => {
   /**
    * Stepper style & className default value
    */
@@ -35,9 +35,9 @@ const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label,
    * Function that return children with new props
    */
   const renderChildren = () =>
-    Children.map(children, (child, index: number) => {
+    Children.map(children, (child, index) => {
       if (isValidElement(child)) {
-        const props: StepProps = {
+        const props = {
           index,
           activeStep,
           isLastStep: index === childrenLen - 1,
@@ -45,6 +45,7 @@ const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label,
 
         return cloneElement(child, props);
       }
+      return child;
     });
 
   /**
@@ -64,12 +65,10 @@ const Stepper = ({ className, style, activeStep, isLastStep, isFirstStep, label,
   };
 
   return (
-    <>
-      <div className={stepperClassname} style={stepperStyle}>
-        <h2 className="text-xl font-bold text-center text-yankees-blue">{label}</h2>
-        <div className="flex py-10">{renderChildren()}</div>
-      </div>
-    </>
+    <div className={stepperClassname} style={stepperStyle}>
+      <h2 className="text-xl font-bold text-center text-yankees-blue">{label}</h2>
+      <div className="flex py-10">{renderChildren()}</div>
+    </div>
   );
 };
 

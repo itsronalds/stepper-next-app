@@ -1,4 +1,4 @@
-export type StepperProps = {
+export type Stepper = {
   className?: string;
   style?: object;
   activeStep: number;
@@ -8,10 +8,10 @@ export type StepperProps = {
   children: JSX.Element[];
 };
 
-export type StepProps = {
-  index: number;
-  activeStep: number;
-  isLastStep: boolean;
+export type Step = {
+  index?: number;
+  activeStep?: number;
+  isLastStep?: boolean;
   onClick?: (index: number) => void;
   children?: JSX.Element[];
 };
