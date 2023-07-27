@@ -4,8 +4,8 @@
 
 ## Technologies
 
-* [Next.js](https://nextjs.org/)
-* [Tailwind CSS](https://tailwindcss.com/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## Getting Started
 
